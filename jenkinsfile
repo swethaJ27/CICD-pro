@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'master', url: 'https://github.com/swethaJ27/CICD-pro.git'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh '''
+                sudo cp -r * /var/www/html/
+                sudo systemctl restart apache2
+                '''
+            }
+        }
+    }
+}
