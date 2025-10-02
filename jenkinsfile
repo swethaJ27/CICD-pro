@@ -1,20 +1,69 @@
-pipeline {
+pipeline
+
+{
+
     agent any
+ 
+    stages
 
-    stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'master', url: 'https://github.com/swethaJ27/CICD-pro.git'
+    {
+
+        stage ('Build')
+
+        {
+
+            steps
+
+            {
+
+                echo 'Build App'
+
             }
+
+        }
+ 
+        stage ('Build1')
+
+        {
+
+            steps
+
+            {
+
+                echo 'Build1 App'
+
+            }
+
         }
 
-        stage('Deploy') {
-            steps {
-                sh '''
-                sudo cp -r * /var/www/html/
-                sudo systemctl restart apache2
-                '''
+        stage ('Test')
+
+        {
+
+            steps
+
+            {
+
+                echo 'Test App'
+
             }
+
         }
+
+        stage ('Deploy')
+
+        {
+
+            steps
+
+            {
+
+                echo 'Deploy App'
+
+            }
+
+        }
+
     }
+
 }
