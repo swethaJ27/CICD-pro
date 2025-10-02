@@ -5,7 +5,7 @@ pipeline {
     stage('Checkout') {
       steps {
         // Fetch code from GitHub
-        git branch: 'master', url: 'https://github.com/swethaJ27/CICD-pro.git.git'
+        git branch: 'master', url: 'https://github.com/swethaJ27/CICD-pro.git'
       }
     }
 
